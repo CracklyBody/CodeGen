@@ -13,7 +13,9 @@ import java.io.Serializable
     storages = [Storage(value = "persistentSettingsData.xml")]
 )
 class PersistentSettingsData(
-    var projectBasePath: String = ""
+    var projectBasePath: String = "",
+    var lastChosenArchitectureId: Int = 0,
+    var lastChosenAndroidComponentId: Int = 0,
 ) : Serializable, PersistentStateComponent<PersistentSettingsData> {
 
     companion object {

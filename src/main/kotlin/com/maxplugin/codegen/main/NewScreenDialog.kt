@@ -50,7 +50,8 @@ class NewScreenDialog(project: Project, currentPath: CurrentPath?) : DialogWrapp
                     panel.androidComponentComboBox.selectedIndex,
                     panel.projectModuleComboBox.selectedItem as ProjectModule,
                     panel.architectureTypeComboBox.selectedItem as ArchitectureType,
-                    panel.customVariablesPanel.customVariablesMap
+                    panel.customVariablesPanel.customVariablesMap,
+                    panel.addRecyclerViewCheckBox.isSelected
                 )
             )
         }

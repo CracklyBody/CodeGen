@@ -30,6 +30,8 @@ class OkClickedReducer @Inject constructor(
             )
         }
         PersistentSettingsData.getInstance().state?.projectBasePath = action.basePackagePath
+        PersistentSettingsData.getInstance().state?.lastChosenArchitectureId = action.architectureType.id
+        PersistentSettingsData.getInstance().state?.lastChosenAndroidComponentId = action.androidComponentIndex
         effect.emit(NewScreenEffect.Close)
     }
 }

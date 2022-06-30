@@ -1,5 +1,6 @@
 package com.maxplugin.codegen.main
 
+import com.maxplugin.codegen.model.AndroidComponent
 import com.maxplugin.codegen.model.ArchitectureType
 import com.maxplugin.codegen.model.CustomVariable
 import com.maxplugin.codegen.model.ProjectModule
@@ -12,7 +13,8 @@ sealed class NewScreenAction {
         val androidComponentIndex: Int,
         val module: ProjectModule,
         val architectureType: ArchitectureType,
-        val customVariablesMap: Map<CustomVariable, String>
+        val customVariablesMap: Map<CustomVariable, String>,
+        val addRecyclerView: Boolean
     ) : NewScreenAction()
 
     data class CategoryIndexChanged(val index: Int) : NewScreenAction()

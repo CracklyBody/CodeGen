@@ -9,6 +9,7 @@ import com.maxplugin.codegen.data.repository.ModuleRepository
 import com.maxplugin.codegen.data.repository.SettingsRepository
 import com.maxplugin.codegen.main.NewScreenAction
 import com.maxplugin.codegen.main.NewScreenState
+import com.maxplugin.codegen.model.AndroidComponent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
@@ -29,7 +30,8 @@ class InitReducer @Inject constructor(
                 projectModules = moduleRepository.getAllModules(),
                 selectedModule = currentPath?.projectModule,
                 categories = settingsRepository.loadArchitectureType(),
-                selectedArchitectureType = settingsRepository.loadArchitectureType().first()
+                selectedArchitectureType = settingsRepository.loadArchitectureType().firstOrNull(){it.id == PersistentSettingsData.getInstance().state?.lastChosenArchitectureId} ?: settingsRepository.loadArchitectureType().first(),
+                androidComponent = AndroidComponent.values()[PersistentSettingsData.getInstance().state?.lastChosenAndroidComponentId ?: 0]
             )
         }
 }

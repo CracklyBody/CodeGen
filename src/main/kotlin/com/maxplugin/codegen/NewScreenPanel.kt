@@ -9,6 +9,7 @@ import com.maxplugin.codegen.util.*
 import java.awt.Dimension
 import java.awt.GridBagLayout
 import javax.swing.BoxLayout
+import javax.swing.JCheckBox
 import javax.swing.JLabel
 import javax.swing.JPanel
 import javax.swing.JTextField
@@ -18,6 +19,7 @@ class NewScreenPanel : JPanel() {
     val nameTextField = JTextField()
     val packageTextField = JTextField()
     val basePackagePathTextField = JTextField()
+    val addRecyclerViewCheckBox = JCheckBox()
 
     val architectureTypeComboBox = ComboBox<ArchitectureType>()
     val androidComponentComboBox = ComboBox(AndroidComponent.values())
@@ -35,16 +37,18 @@ class NewScreenPanel : JPanel() {
                 layout = GridBagLayout()
                 add(JLabel("Name:"), constraintsLeft(0, 0))
                 add(nameTextField, constraintsRight(1, 0))
-                add(JLabel("Category:"), constraintsLeft(0, 1))
+                add(JLabel("Architecture Type:"), constraintsLeft(0, 1))
                 add(architectureTypeComboBox, constraintsRight(1, 1))
-                add(JLabel("Module:"), constraintsLeft(0, 2))
-                add(projectModuleComboBox, constraintsRight(1, 2))
-                add(JLabel("Package:"), constraintsLeft(0, 3))
-                add(packageTextField, constraintsRight(1, 3))
-                add(JLabel("Base Package Path:"), constraintsLeft(0, 4))
-                add(basePackagePathTextField, constraintsRight(1, 4))
-                add(JLabel("Android Component:"), constraintsLeft(0, 5))
-                add(androidComponentComboBox, constraintsRight(1, 5))
+//                add(JLabel("Module:"), constraintsLeft(0, 2))
+//                add(projectModuleComboBox, constraintsRight(1, 2))
+                add(JLabel("Package:"), constraintsLeft(0, 2))
+                add(packageTextField, constraintsRight(1, 2))
+                add(JLabel("Base Package Path:"), constraintsLeft(0, 3))
+                add(basePackagePathTextField, constraintsRight(1, 3))
+                add(JLabel("Android Component:"), constraintsLeft(0, 4))
+                add(androidComponentComboBox, constraintsRight(1, 4))
+                add(JLabel("Add Recycler view, Adapter:"), constraintsLeft(0, 5))
+                add(addRecyclerViewCheckBox, constraintsRight(1, 5))
                 architectureTypeComboBox.addActionListener { if (!listenersBlocked) onCategoryIndexChanged?.invoke(architectureTypeComboBox.selectedIndex) }
             }
         )
@@ -69,6 +73,7 @@ class NewScreenPanel : JPanel() {
             categories.forEach { architectureTypeComboBox.addItem(it) }
         }
         architectureTypeComboBox.selectedIndex = 0
+        androidComponentComboBox.selectedItem = androidComponent
         listenersBlocked = false
     }
 }

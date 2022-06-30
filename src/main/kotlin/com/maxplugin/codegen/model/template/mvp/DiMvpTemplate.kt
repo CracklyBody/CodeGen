@@ -17,8 +17,8 @@ interface ${Variable.NAME.value}Component {
 class ${Variable.NAME.value}Module() {
 
 	@dagger.Provides
-	fun presenter(${Variable.NAME.value.toCamelCase()}Presenter: ${Variable.NAME.value}Presenter): ${Variable.NAME.value}Contract.Presenter {
-		return ${Variable.NAME.value.toCamelCase()}Presenter
+	fun presenter(${Variable.NAME_LOWER_CASE.value}Presenter: ${Variable.NAME.value}Presenter): ${Variable.NAME.value}Contract.Presenter {
+		return ${Variable.NAME_LOWER_CASE.value}Presenter
 	}
 
 }

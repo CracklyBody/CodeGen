@@ -22,11 +22,13 @@ class ${Variable.NAME.value}Presenter @javax.inject.Inject constructor(private v
         router.exit()
     }
 
+    ${Variable.RECYCLER_VIEW_ADAPTER_ON_ITEM_CLICKED_PRESENTER_IMPL.value}
+
     //endregion
 
     //region ============= Internal =============
 
-
+    ${Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_IMPL.value}
 
     //endregion
 }

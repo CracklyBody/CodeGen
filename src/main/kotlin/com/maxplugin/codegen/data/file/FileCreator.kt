@@ -1,7 +1,5 @@
 package com.maxplugin.codegen.data.file
 
-import com.intellij.openapi.project.Project
-import com.intellij.psi.codeStyle.CodeStyleManager
 import com.maxplugin.codegen.data.repository.SettingsRepository
 import com.maxplugin.codegen.data.repository.SourceRootRepository
 import com.maxplugin.codegen.model.AndroidComponent
@@ -27,8 +25,8 @@ class FileCreator @Inject constructor(
         architectureType: ArchitectureType,
         customVariablesMap: Map<CustomVariable, String>
     ) {
-        settingsRepository.loadScreenElements(architectureType.id).apply {
-            filter { it.relatedAndroidComponent == AndroidComponent.NONE || it.relatedAndroidComponent == androidComponent }
+        settingsRepository.loadScreenElements(architectureType).apply {
+            filter { it.relatedAndroidComponent == AndroidComponent.NONE || it.relatedAndroidComponent == androidComponent}
                 .forEach {
                     val file = File(
                         it.fileName(screenName, packageName, basePackagePath, androidComponent.displayName, customVariablesMap),

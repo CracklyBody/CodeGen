@@ -14,6 +14,7 @@ class ${Variable.NAME.value}Fragment : ${Variable.FIND_CLASS.value}BaseFragment(
 	@javax.inject.Inject
 	lateinit var presenterProvider: javax.inject.Provider<${Variable.NAME.value}Contract.Presenter>
 
+    ${Variable.RECYCLER_VIEW_ADAPTER_DECLARATION.value}
 	//region ==================== Fragment creation ====================
 
 	companion object {
@@ -56,7 +57,7 @@ class ${Variable.NAME.value}Fragment : ${Variable.FIND_CLASS.value}BaseFragment(
 	override fun showErrorMessage(message: String) {
 		 //${Variable.FIND_CLASS.value}UpScreenMessage?.qualifiedName ?: "io.mobilife.upscreenmessage.UpScreenMessage"}.showSuccessMessage(message, upScreenMessageContainer)
 	}
-	
+	${Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_IMPL.value}
 	//endregion
 
 	//region ==================== UI handlers ====================
@@ -83,7 +84,7 @@ class ${Variable.NAME.value}Fragment : ${Variable.FIND_CLASS.value}BaseFragment(
 	//region ==================== UI ====================
 
 	private fun initUI(view: View) {
-		
+		${Variable.RECYCLER_VIEW_LAYOUT_DECLARATION.value}
 	}
 
 	//endregion

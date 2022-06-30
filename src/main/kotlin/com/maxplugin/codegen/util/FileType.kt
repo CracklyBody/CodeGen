@@ -3,12 +3,20 @@ package com.maxplugin.codegen.util
 import com.maxplugin.codegen.model.Variable
 
 private val KOTLIN_DEFAULT_TEMPLATE = "package ${Variable.PACKAGE_NAME.value}\n\nclass ${Variable.NAME.value}${Variable.SCREEN_ELEMENT.value}"
-private const val LAYOUT_XML_DEFAULT_TEMPLATE = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
-        "<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +
-        "    android:layout_width=\"match_parent\"\n" +
-        "    android:layout_height=\"match_parent\">\n" +
-        "\n" +
-        "</FrameLayout>"
+private val LAYOUT_XML_DEFAULT_TEMPLATE = """
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/bottomSheet"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+    ${Variable.RECYCLER_VIEW_LAYOUT.value}
+
+</LinearLayout>
+"""
 private val KOTLIN_DEFAULT_FILE_NAME = "${Variable.NAME.value}${Variable.SCREEN_ELEMENT.value}"
 private val LAYOUT_XML_DEFAULT_FILE_NAME = "${Variable.ANDROID_COMPONENT_NAME_LOWER_CASE.value}_${Variable.NAME_SNAKE_CASE.value}"
 

@@ -17,7 +17,7 @@ class SettingsRepository @Inject constructor(private val project: Project) {
         return settings.architectureTypes.map { category ->
             CategoryScreenElements(
                 category,
-                settings.screenElements.filter { it.categoryId == category.id }
+                settings.screenElements.filter { it.architectureType == category }
             )
         }
     }
@@ -28,8 +28,8 @@ class SettingsRepository @Inject constructor(private val project: Project) {
 
     fun loadArchitectureType(): List<ArchitectureType> = loadSettings().architectureTypes
 
-    fun loadScreenElements(categoryId: Int) =
-        loadSettings().screenElements.filter { it.categoryId == categoryId }
+    fun loadScreenElements(architectureType: ArchitectureType) =
+        loadSettings().screenElements.filter { it.architectureType == architectureType }
 
     private fun loadSettings() = screenGeneratorComponent.settings
 }
