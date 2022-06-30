@@ -23,14 +23,15 @@ class FileCreator @Inject constructor(
         androidComponent: AndroidComponent,
         module: ProjectModule,
         architectureType: ArchitectureType,
-        customVariablesMap: Map<CustomVariable, String>
+        customVariablesMap: Map<CustomVariable, String>,
+        addRecyclerView: Boolean
     ) {
         settingsRepository.loadScreenElements(architectureType).apply {
             filter { it.relatedAndroidComponent == AndroidComponent.NONE || it.relatedAndroidComponent == androidComponent}
                 .forEach {
                     val file = File(
-                        it.fileName(screenName, packageName, basePackagePath, androidComponent.displayName, customVariablesMap),
-                        it.body(screenName, packageName, basePackagePath, androidComponent.displayName, customVariablesMap),
+                        it.fileName(screenName, packageName, basePackagePath, androidComponent.displayName, customVariablesMap, addRecyclerView),
+                        it.body(screenName, packageName, basePackagePath, androidComponent.displayName, customVariablesMap, addRecyclerView),
                         it.fileType
                     )
                     if (it.fileType == FileType.LAYOUT_XML) {

@@ -13,7 +13,7 @@ enum class Variable(val value: String, val description: String) {
     RECYCLER_VIEW_LAYOUT("%recyclerViewLayout%", "Place where need to add recycler view"),
     RECYCLER_VIEW_ADAPTER_DECLARATION("%recyclerViewAdapter%", "Something like val adapter: MyAdapter"),
     RECYCLER_VIEW_LAYOUT_DECLARATION("%recyclerViewLayoutDeclaration%", "Declaration of recyclerView"),
-    RECYCLER_VIEW_ADAPTER_SWAP_ITEMS("%recyclerViewAdapterSwapItemsImpl%", "swap items func"),
+    RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_PRESENTER("%recyclerViewAdapterSwapItemsImplPresenter%", "swap items func"),
     RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_IMPL("%recyclerViewAdapterSwapItems%", "swap items func impl"),
     RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_CONTRACT("%recyclerViewAdapterSwapItemsContract%", "contract swap items"),
     RECYCLER_VIEW_ADAPTER_ON_ITEM_CLICKED_CONTRACT("%recyclerViewAdapterOnItemClickedContract%", "contract onListItemClicked"),

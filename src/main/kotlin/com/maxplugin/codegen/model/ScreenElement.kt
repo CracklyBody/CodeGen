@@ -4,7 +4,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiClass
 import com.intellij.psi.search.GlobalSearchScope
 import com.intellij.psi.search.PsiShortNamesCache
-import com.maxplugin.codegen.model.template.mvp.adapter.ADAPTER_LAYOUT_IMPL
+import com.maxplugin.codegen.model.template.mvp.adapter.*
 import com.maxplugin.codegen.util.FileType
 import com.maxplugin.codegen.util.toSnakeCase
 import java.io.Serializable
@@ -31,10 +31,11 @@ data class ScreenElement(
         packageName: String,
         basePackagePath: String,
         androidComponent: String,
-        customVariablesMap: Map<CustomVariable, String>
+        customVariablesMap: Map<CustomVariable, String>,
+        addRecyclerView: Boolean
     ) =
         template
-            .replaceVariables(screenName, packageName, basePackagePath, androidComponent)
+            .replaceVariables(screenName, packageName, basePackagePath, androidComponent,addRecyclerView)
             .replaceCustomVariables(customVariablesMap)
 
     fun fileName(
@@ -42,10 +43,11 @@ data class ScreenElement(
         packageName: String,
         basePackagePath: String,
         androidComponent: String,
-        customVariablesMap: Map<CustomVariable, String>
+        customVariablesMap: Map<CustomVariable, String>,
+        addRecyclerView: Boolean
     ) =
         fileNameTemplate
-            .replaceVariables(screenName, packageName, basePackagePath, androidComponent)
+            .replaceVariables(screenName, packageName, basePackagePath, androidComponent, addRecyclerView)
             .replaceCustomVariables(customVariablesMap)
             .run {
                 if (fileType == FileType.LAYOUT_XML)
@@ -61,13 +63,14 @@ data class ScreenElement(
         androidComponent: String,
         needRecyclerView: Boolean
     ) =
-        replace(Variable.RECYCLER_VIEW_LAYOUT.value, ADAPTER_LAYOUT_IMPL)
-            .replace(Variable.RECYCLER_VIEW_ADAPTER_DECLARATION.value, screenName)
-            .replace(Variable.RECYCLER_VIEW_LAYOUT_DECLARATION.value, screenName)
-            .replace(Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_IMPL.value, screenName)
-            .replace(Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_CONTRACT.value, screenName)
-            .replace(Variable.RECYCLER_VIEW_ADAPTER_ON_ITEM_CLICKED_CONTRACT.value, screenName)
-            .replace(Variable.RECYCLER_VIEW_ADAPTER_ON_ITEM_CLICKED_PRESENTER_IMPL.value, screenName)
+        replace(Variable.RECYCLER_VIEW_LAYOUT.value, if(needRecyclerView) ADAPTER_LAYOUT_IMPL else "")
+            .replace(Variable.RECYCLER_VIEW_ADAPTER_DECLARATION.value, ADAPTER_FRAGMENT_DECLARATION)
+            .replace(Variable.RECYCLER_VIEW_LAYOUT_DECLARATION.value, ADAPTER_LAYOUT_FRAGMENT_DECLARATION)
+            .replace(Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_IMPL.value, ADAPTER_FRAGMENT_SHOW_ITEMS_IMPL_ITEMS_IMPL)
+            .replace(Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_CONTRACT.value, ADAPTER_CONTRACT_SHOW_ITEMS)
+            .replace(Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_PRESENTER.value, ADAPTER_PRESENTER_SHOW_ITEMS_IMPL)
+            .replace(Variable.RECYCLER_VIEW_ADAPTER_ON_ITEM_CLICKED_CONTRACT.value, ADAPTER_CONTRACT_ON_ITEM_CLICKED)
+            .replace(Variable.RECYCLER_VIEW_ADAPTER_ON_ITEM_CLICKED_PRESENTER_IMPL.value, ADAPTER_PRESENTER_ON_ITEM_CLICKED_IMPL)
             .replace(Variable.NAME.value, screenName)
             .replace(Variable.NAME_SNAKE_CASE.value, screenName.toSnakeCase())
             .replace(Variable.NAME_LOWER_CASE.value, screenName.decapitalize())

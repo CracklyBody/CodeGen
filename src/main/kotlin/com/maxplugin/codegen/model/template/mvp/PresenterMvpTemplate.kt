@@ -28,7 +28,7 @@ class ${Variable.NAME.value}Presenter @javax.inject.Inject constructor(private v
 
     //region ============= Internal =============
 
-    ${Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_IMPL.value}
+    ${Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_PRESENTER.value}
 
     //endregion
 }

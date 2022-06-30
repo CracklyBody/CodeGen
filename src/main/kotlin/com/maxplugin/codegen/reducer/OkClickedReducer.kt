@@ -27,6 +27,7 @@ class OkClickedReducer @Inject constructor(
                 action.module,
                 action.architectureType,
                 action.customVariablesMap,
+                action.addRecyclerView
             )
         }
         PersistentSettingsData.getInstance().state?.projectBasePath = action.basePackagePath
