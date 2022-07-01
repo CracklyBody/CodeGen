@@ -39,7 +39,14 @@ class FileCreator @Inject constructor(
                         if (resourcesSubdirectory != null) {
                             addFile(resourcesSubdirectory, file, it.subdirectory)
                         }
-                    } else {
+                    }
+                    if (it.fileNameTemplate.endsWith("Adapter")) {
+                        val codeSubdirectory = findCodeSubdirectory("$packageName.adapter", module, it.sourceSet)
+                        if (codeSubdirectory != null) {
+                            addFile(codeSubdirectory, file, it.subdirectory)
+                        }
+                    }
+                    else {
                         val codeSubdirectory = findCodeSubdirectory(packageName, module, it.sourceSet)
                         if (codeSubdirectory != null) {
                             addFile(codeSubdirectory, file, it.subdirectory)

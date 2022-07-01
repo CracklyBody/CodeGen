@@ -4,35 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4057abec-d864-407a-9586-2ae6d9d90a0a" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterContractOnItemClicked.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterContractShowItems.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterFragmentDeclaration.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterFragmentShowItemsImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterLayoutFragmentDeclaration.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterLayoutImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterOnItemClickedImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterShowItemsImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterTemplateMvp.kt" afterDir="false" />
+    <list default="true" id="4057abec-d864-407a-9586-2ae6d9d90a0a" name="Changes" comment="Minor fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/NewScreenPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/NewScreenPanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/PersistentSettingsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/PersistentSettingsData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/repository/SettingsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/repository/SettingsRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/main/NewScreenAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/main/NewScreenAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/main/NewScreenDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/main/NewScreenDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/main/NewScreenState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/main/NewScreenState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/ArchitectureType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/ArchitectureType.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/ScreenElement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/ScreenElement.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Settings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Settings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Variable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Variable.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/ContractMvpTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/ContractMvpTemplate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/DiMvpTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/DiMvpTemplate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/FragmentMvpTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/FragmentMvpTemplate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/PresenterMvpTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/PresenterMvpTemplate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/reducer/InitReducer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/reducer/InitReducer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/reducer/OkClickedReducer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/reducer/OkClickedReducer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/util/FileType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/util/FileType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterOnItemClickedImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterOnItemClickedImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterShowItemsImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterShowItemsImpl.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,17 +100,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/max/IdeaProjects/CodeGen",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/max/IdeaProjects/CodeGen&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Maxim\IdeaProjects\CodeGen\src\main\kotlin\com\maxplugin\codegen\model" />
@@ -230,7 +210,9 @@
       <workItem from="1656531208551" duration="1531000" />
       <workItem from="1656577673310" duration="1620000" />
       <workItem from="1656579541207" duration="42000" />
-      <workItem from="1656579596400" duration="10996000" />
+      <workItem from="1656579596400" duration="11217000" />
+      <workItem from="1656656152811" duration="677000" />
+      <workItem from="1656656842298" duration="2058000" />
     </task>
     <task id="LOCAL-00001" summary="Minor fixes">
       <created>1656531962513</created>
@@ -253,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656579779529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Minor fixes">
+      <created>1656601197627</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656601197627</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,9 +275,9 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Minor fixes" />
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -305,27 +294,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>41</line>
+          <line>49</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/reducer/OkClickedReducer.kt</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>

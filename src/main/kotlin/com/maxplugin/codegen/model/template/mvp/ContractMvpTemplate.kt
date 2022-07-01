@@ -11,7 +11,6 @@ interface ${Variable.NAME.value}Contract {
 
 		@moxy.viewstate.strategy.StateStrategyType(moxy.viewstate.strategy.OneExecutionStateStrategy::class)
 		fun showErrorMessage(message: String)
-
         ${Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_CONTRACT.value}
 	}
 
@@ -19,9 +18,7 @@ interface ${Variable.NAME.value}Contract {
 	abstract class Presenter : ${Variable.FIND_CLASS.value}BaseDisposablePresenter<View>() {
 
 		abstract fun onBackButtonClicked()
-
         ${Variable.RECYCLER_VIEW_ADAPTER_ON_ITEM_CLICKED_CONTRACT.value}
-
 	}
 
 }

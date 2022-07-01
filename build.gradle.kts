@@ -17,8 +17,8 @@ repositories {
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
 //    version.set("2021.2")
-//    localPath.set("/Applications/Android Studio.app/Contents")
-    localPath.set("D:\\ProgramFiles\\Android")
+    localPath.set("/Applications/Android Studio.app/Contents")
+//    localPath.set("D:\\ProgramFiles\\Android")
 
     type.set("IC") // Target IDE Platform
 

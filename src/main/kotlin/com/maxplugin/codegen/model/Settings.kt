@@ -6,6 +6,7 @@ import com.maxplugin.codegen.model.template.mvp.DEFAULT_CONTRACT_MVP_TEMPLATE
 import com.maxplugin.codegen.model.template.mvp.DEFAULT_DI_MVP_TEMPLATE
 import com.maxplugin.codegen.model.template.mvp.DEFAULT_FRAGMENT_MVP_TEMPLATE
 import com.maxplugin.codegen.model.template.mvp.DEFAULT_PRESENTER_MVP_TEMPLATE
+import com.maxplugin.codegen.model.template.mvp.adapter.ADAPTER_TEMPLATE_MVP
 import com.maxplugin.codegen.util.FileType
 import java.io.Serializable
 
@@ -21,6 +22,7 @@ private fun defaultScreenElements(project: Project) = mutableListOf(
     ScreenElement("MVPPresenter", DEFAULT_PRESENTER_MVP_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}Presenter", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVP, project = project),
     ScreenElement("MVPDi", DEFAULT_DI_MVP_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}DI", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVP, project = project),
     ScreenElement("MVPContract", DEFAULT_CONTRACT_MVP_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}Contract", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVP, project = project),
+    ScreenElement("MVPAdapter", ADAPTER_TEMPLATE_MVP, FileType.KOTLIN, "${Variable.NAME.value}Adapter", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVP, project = project),
     ScreenElement("MVPLayout", FileType.LAYOUT_XML.defaultTemplate, FileType.LAYOUT_XML, FileType.LAYOUT_XML.defaultFileName, architectureType = ArchitectureType.MVP, project = project),
     ScreenElement("ViewModel", DEFAULT_VIEW_MODEL_TEMPLATE, FileType.KOTLIN, FileType.KOTLIN.defaultFileName, project = project),
     ScreenElement("ViewModelTest", DEFAULT_VIEW_MODEL_TEST_TEMPLATE, FileType.KOTLIN, FileType.KOTLIN.defaultFileName, sourceSet = "test", project = project),
