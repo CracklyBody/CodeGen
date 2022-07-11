@@ -1,5 +1,11 @@
 package com.maxplugin.codegen.data.file
 
+import android.databinding.tool.ext.toCamelCase
+import com.intellij.openapi.command.WriteCommandAction
+import com.intellij.openapi.project.Project
+import com.intellij.psi.JavaPsiFacade
+import com.intellij.psi.PsiDocumentManager
+import com.intellij.psi.PsiPackage
 import com.maxplugin.codegen.data.repository.SettingsRepository
 import com.maxplugin.codegen.data.repository.SourceRootRepository
 import com.maxplugin.codegen.model.AndroidComponent
@@ -7,11 +13,14 @@ import com.maxplugin.codegen.model.ArchitectureType
 import com.maxplugin.codegen.model.CustomVariable
 import com.maxplugin.codegen.model.ProjectModule
 import com.maxplugin.codegen.util.FileType
+import com.maxplugin.codegen.util.FileUtils
+import com.maxplugin.codegen.util.toSnakeCase
 import javax.inject.Inject
 
 private const val LAYOUT_DIRECTORY = "layout"
 
 class FileCreator @Inject constructor(
+    private val project: Project,
     private val settingsRepository: SettingsRepository,
     private val sourceRootRepository: SourceRootRepository
 ) {
@@ -40,7 +49,7 @@ class FileCreator @Inject constructor(
                             addFile(resourcesSubdirectory, file, it.subdirectory)
                         }
                     } else {
-                        if (it.fileNameTemplate.endsWith("Adapter")) {
+                        if (addRecyclerView && it.fileNameTemplate.endsWith("Adapter")) {
                             val codeSubdirectory = findCodeSubdirectory("$packageName.adapter", module, it.sourceSet)
                             if (codeSubdirectory != null) {
                                 addFile(codeSubdirectory, file, it.subdirectory)
@@ -54,6 +63,28 @@ class FileCreator @Inject constructor(
                         }
                     }
                 }
+            val appComponent = FileUtils.getClassByName("AppComponent", project)
+            if (appComponent != null) {
+                PsiDocumentManager.getInstance(project).getDocument(appComponent.containingFile)?.let {
+                    val lastImportIndex = it.text.lastIndexOf("import")
+                    val lastIndexImportEnd = it.text.indexOf('\n', lastImportIndex)
+                    val lastImport = it.text.substring(lastImportIndex, lastIndexImportEnd)
+                    val last = it.text.indexOfLast{ it == '}'}
+                    WriteCommandAction.runWriteCommandAction(project
+                    ) {
+                        it.replaceString(
+                            last,
+                            last,
+                            "\n    fun plus(${screenName.decapitalize()}Module: ${screenName.toCamelCase()}Module): ${screenName.toCamelCase()}Component\n"
+                        )
+                        it.replaceString(
+                            lastImportIndex,
+                            lastIndexImportEnd,
+                            "${lastImport}\nimport $packageName.*"
+                        )
+                    }
+                }
+            }
         }
     }
 

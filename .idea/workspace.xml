@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4057abec-d864-407a-9586-2ae6d9d90a0a" name="Changes" comment="Minor fixes">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterFragmentImport.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/util/FileUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/CodeGenAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/CodeGenAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/Directory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/Directory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/ScreenElement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/ScreenElement.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Settings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Settings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/ContractMvpTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/ContractMvpTemplate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterOnItemClickedImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterOnItemClickedImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterShowItemsImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterPresenterShowItemsImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Variable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/Variable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/FragmentMvpTemplate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/FragmentMvpTemplate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterTemplateMvp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/model/template/mvp/adapter/AdapterTemplateMvp.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,23 +43,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="CodeGen" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="CodeGen" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="CodeGen" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="CodeGen" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="intellij" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -213,6 +199,8 @@
       <workItem from="1656579596400" duration="11217000" />
       <workItem from="1656656152811" duration="677000" />
       <workItem from="1656656842298" duration="2058000" />
+      <workItem from="1657376440078" duration="4217000" />
+      <workItem from="1657441402225" duration="11752000" />
     </task>
     <task id="LOCAL-00001" summary="Minor fixes">
       <created>1656531962513</created>
@@ -242,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656601197627</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fiex multiple file creates bug">
+      <created>1657441478320</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657441478320</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,45 +272,29 @@
     </ignored-roots>
     <MESSAGE value="First commit" />
     <MESSAGE value="Minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes" />
+    <MESSAGE value="Fiex multiple file creates bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fiex multiple file creates bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/CodeGenAction.kt</url>
-          <line>82</line>
+          <line>83</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/CodeGenAction.kt</url>
-          <line>66</line>
+          <line>67</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>31</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>37</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>49</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/reducer/OkClickedReducer.kt</url>
-          <line>32</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/maxplugin/codegen/data/file/FileCreator.kt</url>
-          <line>28</line>
-          <option name="timeStamp" value="32" />
+          <line>71</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

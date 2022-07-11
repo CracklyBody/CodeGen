@@ -5,6 +5,7 @@ import com.maxplugin.codegen.model.Variable
 val DEFAULT_FRAGMENT_MVP_TEMPLATE = """package ${Variable.PACKAGE_NAME.value}
 import ${Variable.BASE_PACKAGE_NAME.value}.R
 import kotlinx.android.synthetic.main.${Variable.ANDROID_COMPONENT_NAME_LOWER_CASE.value}_${Variable.NAME_SNAKE_CASE.value}.*
+${Variable.RECYCLER_VIEW_ADAPTER_FRAGMENT_IMPORT.value}
 
 class ${Variable.NAME.value}Fragment : ${Variable.FIND_CLASS.value}BaseFragment(), ${Variable.NAME.value}Contract.View, ${Variable.FIND_CLASS.value}FragmentWithPreloader {
 

@@ -29,6 +29,7 @@ import org.jetbrains.kotlin.idea.core.ShortenReferences
 import org.jetbrains.kotlin.idea.core.getPackage
 import org.jetbrains.kotlin.idea.formatter.commitAndUnblockDocument
 import org.jetbrains.kotlin.idea.util.application.executeWriteCommand
+import org.jetbrains.kotlin.j2k.getContainingMethod
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtPsiFactory
 import java.io.IOException
@@ -117,6 +118,7 @@ class CodeGenAction : AnAction() {
         project.executeWriteCommand(COMMAND_NAME) {
             val addedFile = directory.add(pageObjectFragmentKtFile) as KtFile
     //            val rootDir = ClassUtil.sourceRoot(directory)
+            addedFile.getContainingMethod()
             addedFile.commitAndUnblockDocument()
             ShortenReferences.DEFAULT.process(addedFile)
             CodeStyleManager.getInstance(project).reformat(addedFile)

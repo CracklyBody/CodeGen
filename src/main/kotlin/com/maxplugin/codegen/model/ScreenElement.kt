@@ -6,6 +6,7 @@ import com.intellij.psi.search.GlobalSearchScope
 import com.intellij.psi.search.PsiShortNamesCache
 import com.maxplugin.codegen.model.template.mvp.adapter.*
 import com.maxplugin.codegen.util.FileType
+import com.maxplugin.codegen.util.FileUtils
 import com.maxplugin.codegen.util.toSnakeCase
 import java.io.Serializable
 
@@ -64,6 +65,7 @@ data class ScreenElement(
         needRecyclerView: Boolean
     ) =
         replace(Variable.RECYCLER_VIEW_LAYOUT.value, if(needRecyclerView) ADAPTER_LAYOUT_IMPL else "")
+            .replace(Variable.RECYCLER_VIEW_ADAPTER_FRAGMENT_IMPORT.value, if(needRecyclerView) ADAPTER_FRAGMENT_IMPORT else "")
             .replace(Variable.RECYCLER_VIEW_ADAPTER_DECLARATION.value, if(needRecyclerView) ADAPTER_FRAGMENT_DECLARATION else "")
             .replace(Variable.RECYCLER_VIEW_LAYOUT_DECLARATION.value, if(needRecyclerView) ADAPTER_LAYOUT_FRAGMENT_DECLARATION else "")
             .replace(Variable.RECYCLER_VIEW_ADAPTER_SWAP_ITEMS_IMPL.value, if(needRecyclerView) ADAPTER_FRAGMENT_SHOW_ITEMS_IMPL_ITEMS_IMPL else "")
@@ -81,7 +83,7 @@ data class ScreenElement(
             .replace(Variable.ANDROID_COMPONENT_NAME_LOWER_CASE.value, androidComponent.decapitalize())
             .replace(Regex("(?<!\\w)${Variable.FIND_CLASS.value}\\w+")) { matchResult ->
                 val className = matchResult.value.replace(Variable.FIND_CLASS.value, "")
-                getClassPathByName(className, project)?: className
+                FileUtils.getClassPathByName(className, project)?: className
             }
 
     private fun String.replaceCustomVariables(variables: Map<CustomVariable, String>): String {
@@ -90,18 +92,5 @@ data class ScreenElement(
             updatedString = updatedString.replace("%${variable.name}%", text)
         }
         return updatedString
-    }
-
-    private fun getClassByName(className: String, project: Project): PsiClass? {
-        return try {
-//            FilenameIndex.getFilesByName(project, "UpScreenMessage", GlobalSearchScope.everythingScope(project)).getOrNull(0) as? PsiClass
-//                ?:
-            PsiShortNamesCache.getInstance(project).getClassesByName(className, GlobalSearchScope.projectScope(project)).getOrNull(0)
-        } catch (e: Exception) {
-            null
-        }
-    }
-    private fun getClassPathByName(className: String, project: Project): String? {
-        return getClassByName(className, project)?.qualifiedName
     }
 }
