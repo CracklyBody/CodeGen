@@ -49,10 +49,12 @@ class FileCreator @Inject constructor(
                             addFile(resourcesSubdirectory, file, it.subdirectory)
                         }
                     } else {
-                        if (addRecyclerView && it.fileNameTemplate.endsWith("Adapter")) {
-                            val codeSubdirectory = findCodeSubdirectory("$packageName.adapter", module, it.sourceSet)
-                            if (codeSubdirectory != null) {
-                                addFile(codeSubdirectory, file, it.subdirectory)
+                        if (it.fileNameTemplate.endsWith("Adapter")) {
+                            if (addRecyclerView) {
+                                val codeSubdirectory = findCodeSubdirectory("$packageName.adapter", module, it.sourceSet)
+                                if (codeSubdirectory != null) {
+                                    addFile(codeSubdirectory, file, it.subdirectory)
+                                }
                             }
                         }
                         else {

@@ -7,6 +7,10 @@ import com.maxplugin.codegen.model.template.mvp.DEFAULT_DI_MVP_TEMPLATE
 import com.maxplugin.codegen.model.template.mvp.DEFAULT_FRAGMENT_MVP_TEMPLATE
 import com.maxplugin.codegen.model.template.mvp.DEFAULT_PRESENTER_MVP_TEMPLATE
 import com.maxplugin.codegen.model.template.mvp.adapter.ADAPTER_TEMPLATE_MVP
+import com.maxplugin.codegen.model.template.mvvm.DEFAULT_DI_MVVM_TEMPLATE
+import com.maxplugin.codegen.model.template.mvvm.DEFAULT_FRAGMENT_MVVM_TEMPLATE
+import com.maxplugin.codegen.model.template.mvvm.DEFAULT_VIEW_MODEL_INTERFACE_MVVM_TEMPLATE
+import com.maxplugin.codegen.model.template.mvvm.DEFAULT_VIEW_MODEL_MVVM_TEMPLATE
 import com.maxplugin.codegen.util.FileType
 import java.io.Serializable
 
@@ -18,6 +22,10 @@ val DEFAULT_REPOSITORY_TEMPLATE = "package ${Variable.PACKAGE_NAME.value}.reposi
 
 private fun defaultScreenElements(project: Project) = mutableListOf(
     ScreenElement("Activity", DEFAULT_ACTIVITY_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}${Variable.ANDROID_COMPONENT_NAME.value}", AndroidComponent.ACTIVITY, project = project),
+    ScreenElement("MVVMFragment", DEFAULT_FRAGMENT_MVVM_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}${Variable.ANDROID_COMPONENT_NAME.value}", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVVM, project = project),
+    ScreenElement("MVVMViewModel", DEFAULT_VIEW_MODEL_MVVM_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}ViewModel", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVVM, project = project),
+    ScreenElement("MVVMViewModelInterface", DEFAULT_VIEW_MODEL_INTERFACE_MVVM_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}ViewModelInterface", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVVM, project = project),
+    ScreenElement("MVVMDI", DEFAULT_DI_MVVM_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}DI", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVVM, project = project),
     ScreenElement("MVPFragment", DEFAULT_FRAGMENT_MVP_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}${Variable.ANDROID_COMPONENT_NAME.value}", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVP, project = project),
     ScreenElement("MVPPresenter", DEFAULT_PRESENTER_MVP_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}Presenter", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVP, project = project),
     ScreenElement("MVPDi", DEFAULT_DI_MVP_TEMPLATE, FileType.KOTLIN, "${Variable.NAME.value}DI", AndroidComponent.FRAGMENT, architectureType = ArchitectureType.MVP, project = project),
